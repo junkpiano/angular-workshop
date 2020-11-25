@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label for="file" class="image-upload-container-btn btn btn-bwm">Select Image</label>
+  <input type="file" id="file" #imageUpload name="image" accept="image/*" (change)="selectImage($event)" />
+  <button class="btn" [disabled]="!selectedFile" (click)="uploadImage()">upload</button>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let image of uploadedImages">
+      <img src="{{ image.url }}" />
+    </li>
+  </ul>
+</div>
